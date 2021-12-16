@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    <button type="button" onclick="clickBtn()">按钮</button>
+
+    <script>
+        function sleep (time) {
+            return new Promise((resolve) => setTimeout(resolve, time));
+        }
+
+        function clickBtn() {
+            console.log("time:" + new Date())
+            sleep(1000).then(() => {
+                console.log("time:" + new Date())
+            })
+        }
+    </script>
+</body>
+</html>

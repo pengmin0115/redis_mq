@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wdk.redis.mapper.MessageMapper">
+
+    <insert id="insert">
+        insert into tb_pending values (#{id}, #{threadName}, #{message}, #{commitTime})
+    </insert>
+    <delete id="deleteById">
+        delete from tb_pending where id = #{id}
+    </delete>
+    <select id="selectAll" resultType="com.wdk.redis.entity.Message">
+        select  * from tb_pending;
+    </select>
+</mapper>
